@@ -7,7 +7,7 @@ function start() {
 
 function optionsChangedListener() {
 	chrome.storage.sync.get('apikey', function(value) {
-		localStorage['options'] = JSON.stringify(options);
+		localStorage['options'] = JSON.stringify(value);
 		options = value;
 		reset();
 	});
@@ -99,6 +99,18 @@ function onload() {
 
 	window.setInterval(reset, 3000);
 	reset();
+
+	bind();
+}
+
+function bind() {
+	$("#workers_list").mouseenter(function() {
+		$("#content").addClass('workers_list_expanded');
+	});
+
+	$("#workers_list").mouseleave(function() {
+		$("#content").removeClass('workers_list_expanded');
+	});
 }
 
 start();

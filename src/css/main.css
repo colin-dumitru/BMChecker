@@ -28,6 +28,11 @@ body {
 	background: #F3F3F3;
 }
 
+#content {
+	width: 100%;
+	height: 100%;
+}
+
 /* ------------------------------------------------------------------- */
 
 #hash_rate {
@@ -42,3 +47,44 @@ body {
 	margin-top: 60px;
 	float: left;
 }
+
+/* ------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------- */
+#workers_list {
+	position: absolute;
+	right: -120px;
+	top: 0;
+	background-color: #242424;
+	width: 150px;
+	height: 100%;
+	box-shadow: 0 0 10px black;
+}
+
+#general_info{
+	background-color: #FFB800;
+}
+
+#workers_list > div{
+	color: white;
+	margin-left: 30px;
+	cursor: pointer;
+	font-size: 25px;
+}
+
+#workers_list > div:hover{
+	background-color: orange;
+}
+
+
+.workers_list_contracted{	
+	-webkit-transition: -webkit-transform 0.4s ease;
+	-webkit-transform: translateX(0px);
+}
+
+.workers_list_expanded{	
+	-webkit-transform: translateX(-120px);
+}
+
+
+/* ------------------------------------------------------------------- */
