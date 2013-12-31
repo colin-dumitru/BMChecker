@@ -2,8 +2,9 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 400px;
-	height: 400px;
+	height: 450px;
 	font-family: 'Exo 2', sans-serif;
+	background: #E9E9E9;
 }
 
 .main_header{
@@ -24,8 +25,8 @@ body {
 }
 
 #page {
-	height: 100%;
-	background: #F3F3F3;
+	padding-right: 30px;
+	height: 400px;
 }
 
 #content {
@@ -39,43 +40,78 @@ body {
 	font-size: 100px;
 	float: left;
 	text-align: right;
-	width: 250px;
+	width: 300px;
+	background-color: #666666;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: rgba(255,255,255,0.2) 0px 3px 3px;
 }
 
 #hash_rate_suffix {
 	font-size: 20px;
 	margin-top: 60px;
 	float: left;
+	color: #969696
 }
 
 /* ------------------------------------------------------------------- */
 
 /* ------------------------------------------------------------------- */
+
+#loading_overlay {	
+	position: absolute;
+	left: 0;
+	right: 30px;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	z-index: 1000;
+}
+
+#loading_overlay > img {
+	display: block;
+	position: relative;
+	margin: 200px auto 0;
+}
+
+#error {
+	color: red;
+	text-align: center;
+}
+
 #workers_list {
 	position: absolute;
 	right: -120px;
 	top: 0;
-	background-color: #242424;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5e5e5e), color-stop(100%,#494949));
 	width: 150px;
 	height: 100%;
 	box-shadow: 0 0 10px black;
 }
 
-#general_info{
-	background-color: #FFB800;
+#worker_general{
+	color: #FFB800;
+	margin-left: 30px;
+	cursor: pointer;
+	font-size: 25px;
 }
 
-#workers_list > div{
+.worker_label{
+	padding-left: 5px;
 	color: white;
 	margin-left: 30px;
 	cursor: pointer;
 	font-size: 25px;
 }
 
-#workers_list > div:hover{
-	background-color: orange;
+.worker_label_selected {
+	border-left: 4px solid orange;
 }
 
+.worker_label:hover{
+	background-color: orange;
+}
 
 .workers_list_contracted{	
 	-webkit-transition: -webkit-transform 0.4s ease;
@@ -86,5 +122,31 @@ body {
 	-webkit-transform: translateX(-120px);
 }
 
+.page_container{
+	float: clear;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	background-color: white;
+	border-radius: 3px;
+	borDER: 1px solid #E5E5E5;
+	box-shadow: 1px 1px 3px #B3B3B3;
+	overflow: hidden;
+}
 
+.page_container_header {
+	background-color: #6BD1FF;
+	font-size: 25px;
+	padding: 3px;
+	color: #616161;
+}
+
+.page_container_label > div:nth-child(1){
+	width: 50%;
+	float: left;
+}
+
+.page_container_label > div:nth-child(2){
+	float: left;
+}
 /* ------------------------------------------------------------------- */

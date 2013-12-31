@@ -10,17 +10,119 @@
 
 	<body>
 		<div id='content' class="workers_list_contracted">
+			<div id='loading_overlay'>
+				<img src='img/loader.gif' />
+				<div id='error'></div>
+			</div>
+
 			<div class="main_header"><span id='username'>Loading...</span></div>
 
 			<div id="page">
-				<div id='hash_rate'></div>
-				<div id='hash_rate_suffix'></div>
+
 			</div>
 			<div id="workers_list">
-				<div id='general_info'>&#x2190;general</div>
-				<div>worker1</div>
-				<div>worker2</div>
+				<div id='worker_general' binder='createGeneralPage' worker_id='general'>&#x2190;general</div>
 			</div>
 		</div>
 	</body>
+
+	<script type="text" id='general_page'>
+		<div style=" width: 100%; height: 120px; ">
+			<div id='hash_rate'></div>
+			<div id='hash_rate_suffix'></div>
+		</div>
+
+		<div class="page_container">
+			<div class="page_container_header">Shift</div>
+
+			<div class="page_container_label">
+				<div>accepted</div>
+				<div id='accepted'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>rejected</div>
+				<div id='rejected'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>user score</div>
+				<div id='user_score'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>total score</div>
+				<div id='total_score'>N/A</div>
+			</div>
+		</div>
+
+		<div class="page_container">
+			<div class="page_container_header">Balance</div>
+
+			<div class="page_container_label">
+				<div>BTC</div>
+				<div id='btc'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>NMC</div>
+				<div id='nmc'>N/A</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text" id='worker_page'>
+		<div style=" width: 100%; height: 120px; ">
+			<div id='hash_rate'></div>
+			<div id='hash_rate_suffix'></div>
+		</div>
+
+		<div class="page_container">
+			<div class="page_container_header">Work (BTC)</div>
+
+			<div class="page_container_label">
+				<div>round accepted</div>
+				<div id='btc_round_accepted'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>round rejected</div>
+				<div id='btc_round_rejected'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>total accepted</div>
+				<div id='btc_total_accepted'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>total rejected</div>
+				<div id='btc_total_rejected'>N/A</div>
+			</div>
+		</div>
+
+		<div class="page_container">
+			<div class="page_container_header">Work (NMC)</div>
+
+			<div class="page_container_label">
+				<div>round accepted</div>
+				<div id='nmc_round_accepted'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>round rejected</div>
+				<div id='nmc_round_rejected'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>total accepted</div>
+				<div id='nmc_total_accepted'>N/A</div>
+			</div>
+
+			<div class="page_container_label">
+				<div>total rejected</div>
+				<div id='nmc_total_rejected'>N/A</div>
+			</div>
+		</div>
+	</script>
 </html>
