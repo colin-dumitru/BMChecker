@@ -1,3 +1,7 @@
+html{
+	height: 450px;
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -10,7 +14,7 @@ body {
 .main_header{
 	width: 100%;
 	height: 50px;
-	background-color: #FFB100;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ECA80A), color-stop(100%,#FFB100));
 	overflow: hidden;
 }
 
@@ -88,6 +92,8 @@ body {
 	width: 150px;
 	height: 100%;
 	box-shadow: 0 0 10px black;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 
 #worker_general{
@@ -135,9 +141,9 @@ body {
 }
 
 .page_container_header {
-	background-color: #6BD1FF;
+	border-left: 3px solid orange;
 	font-size: 25px;
-	padding: 3px;
+	padding: 5px;
 	color: #616161;
 }
 

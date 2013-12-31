@@ -61,7 +61,7 @@ function run() {
 
 	chrome.browserAction.onClicked.addListener(popupOpened);
 
-	window.setInterval(getUserInformation, 3000);
+	window.setInterval(getUserInformation, 5000);
 }
 
 run();
