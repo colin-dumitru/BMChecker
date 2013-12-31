@@ -13,7 +13,6 @@ function update() {
 		$('#error', document).text('API key must be set from the options page');		
 	} else {
 		updateWorkerList();
-		updateUserInformation();
 		updateCurrentPage();
 		updateWorkerSelection();
 	}
@@ -46,10 +45,6 @@ function updateWorkerSelection() {
 	$('#worker_' + worker_id, document).addClass('worker_label_selected');
 }
 
-function updateUserInformation() {
-	$('#username', document).text(data.name);
-}
-
 function updateCurrentPage() {
 	$('#loading_overlay', document).hide();
 	worker_update_function();
@@ -59,6 +54,8 @@ function updateCurrentPage() {
 
 function updateGeneralPage() {
 	var rate = convertHashRate(parseFloat(data.hash_rate));
+
+	$('#username', document).text(data.name);
 
 	//todo cache these
 	$("#hash_rate", document).text(rate.val);
@@ -82,6 +79,8 @@ function createGeneralPage() {
 
 function updateWorkerPage() {
 	var rate = convertHashRate(parseFloat(data.workers[worker_id].hash_rate));
+
+	$('#username', document).text(data.workers[worker_id].name);
 
 	//todo cache these
 	$("#hash_rate", document).text(rate.val);
@@ -145,3 +144,15 @@ function bind() {
 }
 
 start();
+
+//--------------------------------------------------------------------------
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-41406389-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = 'https://ssl.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();

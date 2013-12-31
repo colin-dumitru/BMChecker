@@ -2,8 +2,12 @@
   "manifest_version": 2,
 
   "name": "BitMinter checker",
-  "description": "This extension checks for the status of your workers from BitMinter.",
-  "version": "0.1.0",
+  "description": "This extension checks for the status of your BitMinter workers.",
+  "version": "0.1.2",
+
+  "icons": { "16": "icon_16.png",
+           "48": "icon_48.png",
+          "128": "icon_128.png" },
 
   "permissions": [
     "https://bitminter.com/",
@@ -20,5 +24,7 @@
 
   "background": {
     "scripts": ["src/js/jquery.js", "src/js/background.js"]
-  }
+  },
+
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'"
 }
